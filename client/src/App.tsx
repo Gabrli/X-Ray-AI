@@ -1,35 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Hero from "./components/hero/hero";
+import TopHeader from "./components/topHeader/topHeader";
+import "./index.css";
+import { isMobileContext } from "./contexts/isMobileContext";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+  const [windowX, setWindowX] = useState(0)
 
+  useEffect(() => {
+    windowX <= 396 ? setIsMobile(true) : ''
+  }, [windowX])
+
+  window.addEventListener('resize', () =>{setWindowX(window.innerWidth)})
+  
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <isMobileContext.Provider value={isMobile}>
+      <main className="">
+      
+      <TopHeader />
+      <section className="w-full flex justify-center items-center pt-40">
+        <Hero/>
+      </section>
+      
+    </main>
+    </isMobileContext.Provider>
+  );
 }
 
-export default App
+export default App;
