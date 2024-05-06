@@ -16,6 +16,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+html {
+  scroll-behavior: smooth;
+}
 body{
   height: 100vh;
 
@@ -26,4 +29,20 @@ body{
 }
 .btn_started:hover{
   box-shadow: #1F5D7A 0px 8px 24px;;
+}
+.heading{
+  animation:  fade linear forwards;
+  animation-timeline: view();
+  animation-range: contain;
+  
+}
+
+@keyframes fade{
+  from {
+    opacity: 0;
+  } 
+  to {
+    opacity: normal;
+  }
+  
 }

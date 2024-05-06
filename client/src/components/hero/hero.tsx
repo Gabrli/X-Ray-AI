@@ -16,7 +16,7 @@ export default function Hero(){
        
 
         <section className="w-custom-w-hero h-custom-h-hero bg-gray-400 backdrop-blur-md bg-opacity-10 rounded-full border border-gray-100 flex justify-center items-center flex-col mobile1:w-custom-mobile-w-hero mobile1:h-custom-mobile-h-hero mobile2:w-custom-mobile2-w-hero mobile2:h-custom-mobile2-h-hero">
-             <div className="pb-10 mobile1:pb-0">
+             <div className="pb-10 mobile1:pb-0 mobile2:pt-8">
              <Lottie
                 
                 options={defaultOptions}

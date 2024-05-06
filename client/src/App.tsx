@@ -3,16 +3,21 @@ import TopHeader from "./components/topHeader/topHeader";
 import "./index.css";
 import { isMobileContext } from "./contexts/isMobileContext";
 import { useEffect, useState } from "react";
+import FileLoader from "./components/fileLoader/fileLoader";
+import SectionHeading from "./components/heading/sectionHeading";
 
 function App() {
   const [isMobile, setIsMobile] = useState(false)
-  const [windowX, setWindowX] = useState(0)
 
-  useEffect(() => {
-    windowX <= 396 ? setIsMobile(true) : ''
-  }, [windowX])
+  useEffect(() => {isMobileHandler(window.innerWidth)}, [])
 
-  window.addEventListener('resize', () =>{setWindowX(window.innerWidth)})
+  const isMobileHandler = (width: number) => {
+    if(width <= 396) setIsMobile(true)
+    else setIsMobile(false)
+  }
+ 
+
+  window.addEventListener('resize', () => isMobileHandler(window.innerWidth))
   
   return (
     <isMobileContext.Provider value={isMobile}>
@@ -22,6 +27,9 @@ function App() {
       <section className="w-full flex justify-center items-center pt-40">
         <Hero/>
       </section>
+      <SectionHeading text="AI analysis"/>
+      <FileLoader/>
+      
       
     </main>
     </isMobileContext.Provider>
