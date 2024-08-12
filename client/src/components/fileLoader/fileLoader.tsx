@@ -13,7 +13,7 @@ export default function FileLoader(){
      
     };
 
-    const analysisData = (file:null) => {
+    const analysisData = (file:string) => {
       
     }
     return (
@@ -22,7 +22,7 @@ export default function FileLoader(){
         <div className="pb-20">
         <FileUploader   handleChange={handleChange} name="file" types={fileTypes} />
         </div>
-        <ButtonAnalysic isReady={isReady}/>
+        <ButtonAnalysic  isReady={isReady}/>
         </div>
         </div>
     )
