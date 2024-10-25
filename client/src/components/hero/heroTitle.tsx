@@ -6,7 +6,7 @@ export default function HeroTitle(){
                 <TypeAnimation
       sequence={[
    
-        'Explore the Cosmos: Unlocking the Universe with AI',
+        'Explore the Human: Unlocking the Medicine with AI',
         1000, 
       
       ]}

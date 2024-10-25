@@ -5,33 +5,38 @@ import { isMobileContext } from "./contexts/isMobileContext";
 import { useEffect, useState } from "react";
 import FileLoader from "./components/fileLoader/fileLoader";
 import SectionHeading from "./components/heading/sectionHeading";
+import Faq from "./components/faq/faq";
+import Footer from "./components/footer/footer";
+import About from "./components/about/about";
+import Analysic from "./components/analysic/analysic";
+import { useIsMobile } from "./hooks/useIsMobile";
 
 function App() {
-  const [isMobile, setIsMobile] = useState(false)
+  const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {isMobileHandler(window.innerWidth)}, [])
+  useEffect(() => {
+    useIsMobile(window.innerWidth);
+  }, []);
+  window.addEventListener("resize", () =>
+    setIsMobile(useIsMobile(window.innerWidth))
+  );
 
-  const isMobileHandler = (width: number) => {
-    if(width <= 396) setIsMobile(true)
-    else setIsMobile(false)
-  }
- 
-
-  window.addEventListener('resize', () => isMobileHandler(window.innerWidth))
-  
   return (
     <isMobileContext.Provider value={isMobile}>
       <main className="">
-      
-      <TopHeader />
-      <section className="w-full flex justify-center items-center pt-40">
-        <Hero/>
-      </section>
-      <SectionHeading text="AI analysis"/>
-      <FileLoader/>
-      
-      
-    </main>
+        <TopHeader />
+        <section className="w-full flex justify-center items-center pt-40">
+          <Hero />
+        </section>
+        <SectionHeading text="AI analysis" />
+        <FileLoader />
+        <Analysic />
+        <About />
+        <SectionHeading text="Needed answers..." />
+        <Faq />
+        <SectionHeading text="Get in touch" />
+        <Footer />
+      </main>
     </isMobileContext.Provider>
   );
 }

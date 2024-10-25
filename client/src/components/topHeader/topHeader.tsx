@@ -13,7 +13,7 @@ export default function TopHeader(){
 
     window.addEventListener('scroll', () => scrollHandler(window.scrollY))
     return(
-        <header className={`w-full z-10 ${isScrolling ? "bg-gray-500 backdrop-blur-md bg-opacity-10" : ""} fixed top-0 left-0  h-custom-h-top-header flex justify-evenly items-center`}>
+        <header className={`transition duration-300 ease-in-out w-full z-10 ${isScrolling ? "bg-gray-500 backdrop-blur-md bg-opacity-10" : ""} fixed top-0 pt-2 pb-2 left-0  h-custom-h-top-header flex justify-evenly items-center`}>
             <Logo/>
             <Nav/>
         </header>

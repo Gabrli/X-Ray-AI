@@ -4,7 +4,7 @@ import ButtonAnalysic from "./buttonAnalysis";
 const fileTypes = ["JPG", "PNG", "GIF"];
 export default function FileLoader(){
     const [file, setFile] = useState(null);
-    const [isReady, setIsReady] = useState(false)
+    const [isReady, setIsReady] = useState(true)
     const handleChange = (file:null) => {
       if (file){
         setIsReady(true)
