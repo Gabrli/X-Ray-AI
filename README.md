@@ -9,7 +9,7 @@
 
 - 💰 I made sure that the look was good and modern.
 
-- ⏰ Performance and loading times were our main focus, and we've worked hard to let you go and grab snacks when your page loads.
+- ⏰ Performance and loading times were our main focus, and I've worked hard to let you go and grab snacks when your page loads.
 
 
 &nbsp;
