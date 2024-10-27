@@ -1,21 +1,11 @@
-import { useEffect, useState } from "react";
-import { IResult } from "../../types/IResult";
 import { TypeAnimation } from "react-type-animation";
+import { IAnalysis } from "../../types/IAnalysis";
+import { useAnalysis } from "../../hooks/useAnalysis";
 
-export default function Analysic(props: {
-  result: IResult;
-  isActive: boolean;
-}) {
+export default function Analysis(props: IAnalysis) {
   const { result, isActive } = props;
-  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
-  useEffect(() => {
-    if (result) {
-      if (result.img instanceof File) {
-        const url = URL.createObjectURL(result.img);
-        setPreviewUrl(url);
-      } else setPreviewUrl(result.img);
-    }
-  }, [result]);
+  const previewUrl = useAnalysis(result);
+
   return (
     <div
       className={`w-full flex justify-center items-center transition duration-300 ease-in-out ${

@@ -2,33 +2,16 @@ import Hero from "./components/hero/hero";
 import TopHeader from "./components/topHeader/topHeader";
 import "./index.css";
 import { isMobileContext } from "./contexts/isMobileContext";
-import { useEffect, useState } from "react";
 import FileLoader from "./components/fileLoader/fileLoader";
 import SectionHeading from "./components/heading/sectionHeading";
 import Faq from "./components/faq/faq";
 import Footer from "./components/footer/footer";
 import About from "./components/about/about";
-import Analysic from "./components/analysic/analysic";
-import { useIsMobile } from "./hooks/useIsMobile";
-import { IResult } from "./types/IResult";
+import Analysis from "./components/analysic/analysis";
+import { useApp } from "./hooks/useApp";
 
 function App() {
-  const [isMobile, setIsMobile] = useState(false);
-  const [result, setResult] = useState<IResult>({text: '', img: ''})
-  const [isActive, setIsActive] = useState(false)
-
-  useEffect(() => {
-    useIsMobile(window.innerWidth);
-  }, []);
-  useEffect(() => {
-    if(result.text && result.img){
-      setIsActive(true)
-      window.scrollBy(0, 300)
-    } else setIsActive(false)
-  }, [result])
-  window.addEventListener("resize", () =>
-    setIsMobile(useIsMobile(window.innerWidth))
-  );
+  const { isMobile, setResult, result, isActive, setIsActive } = useApp();
 
   return (
     <isMobileContext.Provider value={isMobile}>
@@ -38,12 +21,8 @@ function App() {
           <Hero />
         </section>
         <SectionHeading text="AI analysis" />
-        <FileLoader setIsActive={setIsActive} setResult={setResult}/>
-        { isActive ? 
-        <Analysic result={result} isActive={isActive}/>
-        :
-        ''
-}
+        <FileLoader setIsActive={setIsActive} setResult={setResult} />
+        {isActive ? <Analysis result={result} isActive={isActive} /> : ""}
         <About />
         <SectionHeading text="Needed answers..." />
         <Faq />

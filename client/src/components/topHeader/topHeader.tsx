@@ -1,19 +1,10 @@
-import { useEffect, useState } from "react";
 import Logo from "./logo";
 import Nav from "./nav";
+import { useScroll } from "../../hooks/useScroll";
 
 export default function TopHeader() {
-  const [isScrolling, setIsScrolling] = useState(false);
+  const isScrolling = useScroll();
 
-  useEffect(() => {
-    scrollHandler(window.scrollY);
-  }, []);
-
-  const scrollHandler = (scroll: number) => {
-    scroll > 0 ? setIsScrolling(true) : setIsScrolling(false);
-  };
-
-  window.addEventListener("scroll", () => scrollHandler(window.scrollY));
   return (
     <header
       className={`transition duration-300 ease-in-out w-full z-10 ${
