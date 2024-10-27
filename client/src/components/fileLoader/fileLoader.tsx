@@ -7,14 +7,16 @@ import { IResult } from "../../types/IResult";
 const fileTypes = ["JPG", "PNG", "JPEG"];
 export default function FileLoader(props: {
   setResult: React.Dispatch<React.SetStateAction<IResult>>;
+  setIsActive: React.Dispatch<React.SetStateAction<boolean>>
 }) {
-  const { setResult } = props;
+  const { setResult, setIsActive } = props;
   const [file, setFile] = useState({ name: " " });
   const [isReady, setIsReady] = useState(false);
   const handleChange = (file: null) => {
     if (file) {
       setIsReady(true);
       setFile(file);
+      setIsActive(false)
     } else setIsReady(false);
   };
 
@@ -24,6 +26,8 @@ export default function FileLoader(props: {
     formData.append("file", file as never, file.name);
     ANALYSIS_POST_QUERY(formData).then((res) => {
       setResult({ text: res.data.res, img: formData.get("file") });
+      setIsReady(false)
+      setFile({name: ''})
     });
   };
   return (

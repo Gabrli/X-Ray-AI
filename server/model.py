@@ -48,17 +48,12 @@ train_labels = np.array(train_labels)
 test_images = np.array(test_images) / 255.0
 test_labels = np.array(test_labels)
 
-
-print(f"liczba obrazów treningowych {len(train_images)}")
-print(f"liczba obrazów testowych {len(test_images)}")
-
 num_classes = len(class_names)
-
 
 model = models.Sequential()
 model.add(layers.Conv2D(32, (3,3), activation='relu', input_shape=(32,32,3)))
-model.add(layers.RandomFlip("horizontal"))  # Augmentacja - odbicie poziome
-model.add(layers.RandomRotation(0.2))        # Augmentacja - rotacja
+model.add(layers.RandomFlip("horizontal"))  
+model.add(layers.RandomRotation(0.2))        
 model.add(layers.RandomZoom(0.2))     
 model.add(layers.MaxPooling2D((2,2)))
 model.add(layers.Dropout(0.1))
@@ -78,7 +73,6 @@ model.add(layers.Dense(num_classes, activation="softmax"))
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 early_stopping = EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True)
 
-model.fit(train_images, train_labels, epochs=800, validation_data=(test_images, test_labels) )
+model.fit(train_images, train_labels, epochs=1000, validation_data=(test_images, test_labels) )
 
 model.save('my_model.keras') 
-

@@ -20,6 +20,12 @@ function App() {
   useEffect(() => {
     useIsMobile(window.innerWidth);
   }, []);
+  useEffect(() => {
+    if(result.text && result.img){
+      setIsActive(true)
+      window.scrollBy(0, 300)
+    } else setIsActive(false)
+  }, [result])
   window.addEventListener("resize", () =>
     setIsMobile(useIsMobile(window.innerWidth))
   );
@@ -32,8 +38,12 @@ function App() {
           <Hero />
         </section>
         <SectionHeading text="AI analysis" />
-        <FileLoader setResult={setResult}/>
-        <Analysic result={result}/>
+        <FileLoader setIsActive={setIsActive} setResult={setResult}/>
+        { isActive ? 
+        <Analysic result={result} isActive={isActive}/>
+        :
+        ''
+}
         <About />
         <SectionHeading text="Needed answers..." />
         <Faq />

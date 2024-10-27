@@ -1,7 +1,5 @@
-
-
 interface IResult {
-    text: string,
-    img: FormDataEntryValue | null
+  text: string;
+  img: FormDataEntryValue | null;
 }
-export type { IResult }
+export type { IResult };

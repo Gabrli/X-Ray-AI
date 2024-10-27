@@ -19,9 +19,7 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
-
 )
-
 
 @app.post('/prompt')
 async def PromptToModel(file: bytes = File(...)):
@@ -33,15 +31,7 @@ async def PromptToModel(file: bytes = File(...)):
      user_img_np = np.array(user_img)
      user_img_np = cv.cvtColor(user_img_np, cv.COLOR_BGR2RGB)
      user_img_np = user_img_np / 255.0
-
      user_img_np = np.expand_dims(user_img_np, axis=0)
-    #  user_img_path = os.path.join(os.path.dirname(__file__), 'assets/green.jpg')
-    #  user_img = cv.imread(user_img_path)
-    #  user_img = cv.resize(user_img, (32,32))
-    #  user_img = cv.cvtColor(user_img, cv.COLOR_BGR2RGB)
-    #  user_img = user_img / 255.0
-    #  user_img = np.expand_dims(user_img, axis=0)
-
      prediction = model.predict(user_img_np)
      prediction_class = np.argmax(prediction)
     except FileNotFoundError:
