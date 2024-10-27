@@ -1,11 +1,17 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, File
 from fastapi.middleware.cors import CORSMiddleware
-
+from tensorflow.keras.models import load_model
+import os 
+import cv2 as cv
+import numpy as np
+from io import BytesIO
+from PIL import Image
 app = FastAPI()
 
 origins = [
     'http://localhost:5173'
 ]
+class_names = ['avulsion', 'comminuted', 'greenstick', 'hairline', 'impacted', 'longitudinal', 'oblique', 'pathological', 'spiral']
 
 app.add_middleware(
     CORSMiddleware,
@@ -18,5 +24,26 @@ app.add_middleware(
 
 
 @app.post('/prompt')
-async def PromptToModel():
-    return {"res": "prompt endpoint success"}
+async def PromptToModel(file: bytes = File(...)):
+    try:
+     model_path = os.path.join(os.path.dirname(__file__), '..', 'my_model.keras')
+     model = load_model(model_path)
+     user_img = Image.open(BytesIO(file))
+     user_img = user_img.resize((32,32))
+     user_img_np = np.array(user_img)
+     user_img_np = cv.cvtColor(user_img_np, cv.COLOR_BGR2RGB)
+     user_img_np = user_img_np / 255.0
+
+     user_img_np = np.expand_dims(user_img_np, axis=0)
+    #  user_img_path = os.path.join(os.path.dirname(__file__), 'assets/green.jpg')
+    #  user_img = cv.imread(user_img_path)
+    #  user_img = cv.resize(user_img, (32,32))
+    #  user_img = cv.cvtColor(user_img, cv.COLOR_BGR2RGB)
+    #  user_img = user_img / 255.0
+    #  user_img = np.expand_dims(user_img, axis=0)
+
+     prediction = model.predict(user_img_np)
+     prediction_class = np.argmax(prediction)
+    except FileNotFoundError:
+       ''
+    return {"res": class_names[prediction_class]}

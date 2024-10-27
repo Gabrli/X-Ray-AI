@@ -2,11 +2,11 @@ import { TypeAnimation } from 'react-type-animation';
 
 export default function HeroTitle(){
     return(
-        <h1 className="text-white font-bold text-2xl pl-8 pb-10  mobile1:pb-14 mobile2:pb-20 mobile2:pl-6">
+        <h1 className="text-white font-bold  pl-16 pb-10  mobile1:pb-14 mobile2:pb-20 mobile2:pl-6">
                 <TypeAnimation
       sequence={[
    
-        'Explore the Human: Unlocking the Medicine with AI',
+        'Transforming X-Rays into Insights: Precision Bone Analysis with AI',
         1000, 
       
       ]}

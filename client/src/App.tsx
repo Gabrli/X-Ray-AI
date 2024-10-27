@@ -10,9 +10,12 @@ import Footer from "./components/footer/footer";
 import About from "./components/about/about";
 import Analysic from "./components/analysic/analysic";
 import { useIsMobile } from "./hooks/useIsMobile";
+import { IResult } from "./types/IResult";
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
+  const [result, setResult] = useState<IResult>({text: '', img: ''})
+  const [isActive, setIsActive] = useState(false)
 
   useEffect(() => {
     useIsMobile(window.innerWidth);
@@ -29,8 +32,8 @@ function App() {
           <Hero />
         </section>
         <SectionHeading text="AI analysis" />
-        <FileLoader />
-        <Analysic />
+        <FileLoader setResult={setResult}/>
+        <Analysic result={result}/>
         <About />
         <SectionHeading text="Needed answers..." />
         <Faq />
