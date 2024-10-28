@@ -1,3 +1,4 @@
+import CtaButton from "../cta/ctaButton";
 import Logo from "../topHeader/logo";
 import NavLink from "../topHeader/navLink";
 import { FaInstagram, FaGithub, FaLinkedin, FaBug } from "react-icons/fa";
@@ -14,17 +15,18 @@ export default function Footer() {
           <div className="w-1/3 flex flex-col gap-[14px]   pr-2 mobile1:w-full">
             <Logo />
             <p className="text-gray-400 text-center ">AI Image classificer </p>
-            <button className="transition duration-500 ease-in-out w-2/3 ml-auto mr-auto flex text-[18px] justify-center items-center gap-[12px] font-medium h-[45px] rounded-[8px] bg-blue-700 text-white hover:bg-primary">
-              {<FaLinkedin size={24} />} Linkedin
-            </button>
-            <button className="transition duration-500 ease-in-out w-2/3 ml-auto mr-auto flex text-[18px] justify-center items-center gap-[12px] font-medium h-[45px] rounded-[8px] bg-orange-500 text-white hover:bg-orange-600">
-              <a
-                href="mailto:gabrys.wisniewski@op.pl"
-                className="text-white flex justify-center items-center gap-[12px]"
-              >
-                {<FaBug size={24} />} Report bug
-              </a>
-            </button>
+            <CtaButton
+              icon={<FaLinkedin size={24} />}
+              content="Linkedin"
+              href="https://www.linkedin.com/in/gabriel-wi%C5%9Bniewski-8a8b7730b/"
+              styles="bg-blue-500 hover:bg-blue-600"
+            />
+            <CtaButton
+              icon={<FaBug size={24} />}
+              content="Report bug"
+              href="mailto:gabrys.wisniewski@op.pl"
+              styles="bg-orange-500 hover:bg-orange-600"
+            />
           </div>
           <div className="w-1/3 flex flex-col relative top-[48px] gap-[14px] mobile1:w-full mobile1:pl-12 ">
             <p className="text-gray-400 font-medium text-[20px]">Explore</p>
@@ -39,7 +41,7 @@ export default function Footer() {
                 href="#faq"
                 styles="p-0  text-[16px] hover:text-primary"
               />
-              
+
               <NavLink
                 content="Cooperation"
                 href="mailto:gabrys.wisniewski@op.pl"

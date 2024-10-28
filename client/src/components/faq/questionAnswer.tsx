@@ -11,7 +11,7 @@ export default function QuestionAnswer(props: IQuestionAnswer) {
       key={id}
       onClick={() => setIsActive(!isActive)}
       className={`w-[70%]  ${
-        isActive ? "h-[100px] mobile2:h-[120px] " : "h-[60px] mobile2:h-[55px]"
+        isActive ? "min-h-[120px] " : "h-[60px] mobile2:h-[55px]"
       } flex flex-col gap-[4px] cursor-pointer transition duration-300 ease-in-out rounded-[16px] border border-secondary hover:bg-gray-400 hover:backdrop-blur-md hover:bg-opacity-10 hover:border-gray-400 mobile1:w-[90%]`}
     >
       <section className="w-full  p-4 flex flex-col items-center">

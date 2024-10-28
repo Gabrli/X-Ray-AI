@@ -9,7 +9,7 @@ export default function Analysis(props: IAnalysis) {
   return (
     <div
       className={`w-full flex justify-center items-center transition duration-300 ease-in-out ${
-        isActive ? "h-[42vh] mobile2:h-[46vh]" : "h-[0vh]"
+        isActive ? "h-[46vh] mobile2:h-[46vh]" : "h-[0vh]"
       }  "
       }`}
     >
@@ -32,7 +32,7 @@ export default function Analysis(props: IAnalysis) {
         </p>
         <section className="w-full pt-6 pb-6 flex justify-center">
           <img
-            className="h-[260px] w-1/3"
+            className="h-[160px] w-1/3"
             src={previewUrl as string}
             alt={result.text}
           />
