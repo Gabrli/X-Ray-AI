@@ -1,5 +1,8 @@
 # X-Ray IQ - App with CNN neural network to diagnose fractures
 
+## LIVE: 
+https://x-ray-iq.vercel.app/
+
 &nbsp;
 ## 💡 About the project
 
