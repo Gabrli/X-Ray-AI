@@ -75,4 +75,4 @@ early_stopping = EarlyStopping(monitor='val_loss', patience=3, restore_best_weig
 
 model.fit(train_images, train_labels, epochs=1300, validation_data=(test_images, test_labels) )
 
-model.save('my_model.keras') 
+model.save('server/my_model.keras') 

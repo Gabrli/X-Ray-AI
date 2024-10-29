@@ -24,7 +24,7 @@ app.add_middleware(
 @app.post('/prompt')
 async def PromptToModel(file: bytes = File(...)):
     try:
-     model_path = os.path.join(os.path.dirname(__file__), '..', 'my_model.keras')
+     model_path = os.path.join(os.path.dirname(__file__), '..', 'server/my_model.keras')
      model = load_model(model_path)
      user_img = Image.open(BytesIO(file))
      user_img = user_img.resize((32,32))
