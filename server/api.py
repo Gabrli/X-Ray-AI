@@ -1,6 +1,6 @@
 from fastapi import FastAPI, File
 from fastapi.middleware.cors import CORSMiddleware
-from keras.models import load_model  
+from tensorflow.keras.models import load_model  
 import os 
 import cv2 as cv
 import numpy as np

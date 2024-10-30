@@ -1,7 +1,7 @@
 import cv2 as cv
 import numpy as np
-from keras import layers, models, regularizers 
-from keras.callbacks import EarlyStopping 
+from tensorflow.keras import layers, models, regularizers 
+from tensorflow.keras.callbacks import EarlyStopping 
 from sklearn.model_selection import train_test_split
 import os
 
