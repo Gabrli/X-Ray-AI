@@ -21,6 +21,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.post('/prompt')
 async def PromptToModel(file: bytes = File(...)):
     try:
