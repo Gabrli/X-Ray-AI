@@ -9,7 +9,7 @@ from PIL import Image
 app = FastAPI()
 
 origins = [
-    'https://x-ray-iq-4now.vercel.app/'
+    'https://x-ray-iq.vercel.app/'
 ]
 class_names = ['avulsion', 'comminuted', 'greenstick', 'hairline', 'impacted', 'longitudinal', 'oblique', 'pathological', 'spiral']
 
