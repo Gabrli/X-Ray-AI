@@ -9,7 +9,7 @@ from PIL import Image
 app = FastAPI()
 
 origins = [
-    'https://x-ray-iq.vercel.app/'
+    'http://localhost:5173'
 ]
 class_names = ['avulsion', 'comminuted', 'greenstick', 'hairline', 'impacted', 'longitudinal', 'oblique', 'pathological', 'spiral']
 
@@ -25,7 +25,7 @@ app.add_middleware(
 @app.post('/prompt')
 async def PromptToModel(file: bytes = File(...)):
     try:
-     model_path = os.path.join(os.path.dirname(__file__), '..', 'server/my_model.keras')
+     model_path = os.path.join(os.path.dirname(__file__), '..', 'server/my_model.h5')
      model = load_model(model_path)
      user_img = Image.open(BytesIO(file))
      user_img = user_img.resize((32,32))
