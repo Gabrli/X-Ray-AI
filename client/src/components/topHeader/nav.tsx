@@ -11,7 +11,7 @@ export default function Nav() {
         styles="pl-6 pr-6 pt-1 pb-1 hover:bg-white/20"
       />
       <NavLink
-        href="#"
+        href="https://github.com/Gabrli/X-Ray-IQ"
         content="Repo"
         styles="pl-6 pr-6 pt-1 pb-1 hover:bg-white/20"
       />
