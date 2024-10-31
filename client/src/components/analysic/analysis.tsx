@@ -9,7 +9,7 @@ export default function Analysis(props: IAnalysis) {
   return (
     <div
       className={`w-full flex justify-center items-center transition duration-300 ease-in-out ${
-        isActive ? "h-[46vh] mobile2:h-[55vh] " : "h-[0vh]"
+        isActive ? "h-[46vh] mobile2:h-[56vh] " : "h-[0vh]"
       }  "
       }`}
     >
