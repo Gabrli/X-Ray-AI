@@ -10,8 +10,7 @@ app = FastAPI()
 
 origins = [
     'http://localhost:5173',
-    'https://x-ray-iq.vercel.app/',
-    'https://x-ray-iq.onrender.com/prompt'
+    'https://x-ray-iq.vercel.app',
 ]
 class_names = ['avulsion', 'comminuted', 'greenstick', 'hairline', 'impacted', 'longitudinal', 'oblique', 'pathological', 'spiral']
 
