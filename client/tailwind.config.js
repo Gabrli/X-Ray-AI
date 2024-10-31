@@ -20,7 +20,7 @@ export default {
       },
       screens: {
         mobile1: { max: "745px" },
-        mobile2: { max: "396px" },
+        mobile2: { max: "420px" },
       },
       colors: {
         primary: "#1F5D7A",
