@@ -23,6 +23,10 @@ https://x-ray-iq.vercel.app/
 | *Software Engineer* |
 
 &nbsp;
+## 🔨 Tech stack
+ <img src="https://skillicons.dev/icons?i=react,typescript,tailwind,css,html,python,fastapi,opencv,tensorflow" />
+
+
 ## 🛠️ How to use ?
 
 - Put x-ray picture to box for file `( JPG, PNG, JPEG )`
