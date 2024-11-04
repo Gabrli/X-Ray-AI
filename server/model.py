@@ -12,33 +12,27 @@ testing_images = []
 testing_labels = []
 
 path_to_dataset = os.path.join(os.path.dirname(__file__), 'dataset')
-for class_folder in os.listdir(path_to_dataset):
-    class_folder_path = os.path.join(path_to_dataset, class_folder)
-    if not os.path.isdir(class_folder_path):
+
+def buildData(images, labels, dataName):
+    for class_folder in os.listdir(path_to_dataset):
+     class_folder_path = os.path.join(path_to_dataset, class_folder)
+     if not os.path.isdir(class_folder_path):
         continue 
-    train_folder_path = os.path.join(class_folder_path, 'Train')
-    test_folder_path = os.path.join(class_folder_path, 'Test')
-
-
-    for img_name in os.listdir(train_folder_path):
-        img_path = os.path.join(train_folder_path, img_name)
+     data_folder_path = os.path.join(class_folder_path, dataName)
+     
+     for img_name in os.listdir(data_folder_path):
+        img_path = os.path.join(data_folder_path, img_name)
         img = cv.imread(img_path)
         img = cv.resize(img, (32,32))
         img = cv.cvtColor(img, cv.COLOR_BGR2RGB)
-        training_images.append(img)
-        training_labels.append(class_names.index(class_folder))
+        images.append(img)
+        labels.append(class_names.index(class_folder))
 
-    for img_name in os.listdir(test_folder_path):
-        img_path = os.path.join(test_folder_path, img_name)
-        img = cv.imread(img_path)
-        img = cv.resize(img, (32,32))
-        img = cv.cvtColor(img, cv.COLOR_BGR2RGB)
-        testing_images.append(img)
-        testing_labels.append(class_names.index(class_folder))
+buildData(training_images,training_labels, "Train")
+buildData(testing_images, testing_labels, "Test")
 
 images = np.concatenate([training_images, testing_images])
 labels = np.concatenate([training_labels, testing_labels])
-
 
 train_images, test_images, train_labels, test_labels = train_test_split(images, labels)
 
@@ -71,8 +65,7 @@ model.add(layers.Dropout(0.5))
 model.add(layers.Dense(128,  activation='relu', kernel_regularizer=regularizers.l2(0.00001)))
 model.add(layers.Dense(num_classes, activation="softmax"))
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
-early_stopping = EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True)
  
-model.fit(train_images, train_labels, epochs=2000, validation_data=(test_images, test_labels) )
+model.fit(train_images, train_labels, epochs=2200, validation_data=(test_images, test_labels) )
 
 model.save('server/my_model.h5') 
