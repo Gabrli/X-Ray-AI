@@ -21,7 +21,7 @@ function App() {
           <Hero />
         </section>
         <SectionHeading text="AI analysis" />
-        <FileLoader setIsActive={setIsActive} setResult={setResult} />
+        <FileLoader setIsActive={setIsActive} setResult={setResult} isActive={isActive} />
         {isActive ? <Analysis result={result} isActive={isActive} /> : ""}
         <About />
         <SectionHeading text="Needed answers..." />

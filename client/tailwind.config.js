@@ -19,7 +19,7 @@ export default {
         "custom-fileloader-w": "600px",
       },
       screens: {
-        mobile1: { max: "745px" },
+        mobile1: { max: "1200px" },
         mobile2: { max: "420px" },
       },
       colors: {

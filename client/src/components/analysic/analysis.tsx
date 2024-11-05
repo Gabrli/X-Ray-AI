@@ -9,14 +9,14 @@ export default function Analysis(props: IAnalysis) {
   return (
     <div
       className={`w-full flex justify-center items-center transition duration-300 ease-in-out ${
-        isActive ? "h-[46vh] mobile2:h-[56vh] " : "h-[0vh]"
+        isActive ? "h-[50vh] mobile1:h-[56vh] " : "h-[0vh]"
       }  "
       }`}
     >
       <div
         className={`w-[20%]  border transition duration-300 ease-in-out p-4 rounded-[8px] h-full  border-primary ${
           isActive ? "opacity-100" : "opacity-0"
-        } bg-secondary mobile2:w-[90%] `}
+        } bg-secondary mobile1:w-[90%] `}
       >
         <h3 className="font-medium text-[20px]">Results of analysis</h3>
         <p>

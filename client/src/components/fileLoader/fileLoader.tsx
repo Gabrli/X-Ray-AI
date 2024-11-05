@@ -5,10 +5,11 @@ import { useFileLoader } from "../../hooks/useFileLoader";
 
 const fileTypes = ["JPG", "PNG", "JPEG"];
 export default function FileLoader(props: IFileLoader) {
-  const { setResult, setIsActive } = props;
-  const { isReady, handleChange, analysisData } = useFileLoader({
+  const { setResult, setIsActive, isActive} = props;
+  const { isReady, handleChange, analysisData, sendQuery } = useFileLoader({
     setIsActive,
     setResult,
+    isActive
   });
 
   return (
@@ -25,6 +26,7 @@ export default function FileLoader(props: IFileLoader) {
           />
         </div>
         <ButtonAnalysic fun={analysisData} isReady={isReady} />
+        {sendQuery ? <p className="m-0 pt-10 text-center text-sm w-[90%]">If you waiting longer than a few seconds it's does mean that server have to start and you have to wait <strong>20-50</strong> seconds</p> : ""}
       </div>
     </div>
   );
