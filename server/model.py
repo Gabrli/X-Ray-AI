@@ -62,10 +62,10 @@ model.add(layers.MaxPooling2D((2,2)))
 model.add(layers.Dropout(0.4))
 model.add(layers.Flatten()) 
 model.add(layers.Dropout(0.5))
-model.add(layers.Dense(128,  activation='relu', kernel_regularizer=regularizers.l2(0.00001)))
+model.add(layers.Dense(128,  activation='relu', kernel_regularizer=regularizers.l2(0.0001)))
 model.add(layers.Dense(num_classes, activation="softmax"))
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
  
-model.fit(train_images, train_labels, epochs=2200, validation_data=(test_images, test_labels) )
+model.fit(train_images, train_labels, epochs=600, validation_data=(test_images, test_labels) )
 
 model.save('server/my_model.h5') 

@@ -22,6 +22,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get('/')
+async def testGet():
+   return {'res': "is worked !"}
 
 @app.post('/prompt')
 async def PromptToModel(file: bytes = File(...)):
