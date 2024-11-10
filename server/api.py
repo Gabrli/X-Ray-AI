@@ -20,7 +20,7 @@ app.add_middleware(
 
 @app.get('/')
 async def testGet():
-   return "KURWA DZIAŁA ( Żukowski i tak powie, że można było krócej )"
+   return "DZIAŁA !!! POŁĄCZYŁEM SIĘ Z MOIM SERWEREM"
 
 @app.post('/prompt')
 async def PromptToModel(file: bytes = File(...)):
