@@ -8,10 +8,6 @@ from io import BytesIO
 from PIL import Image
 app = FastAPI()
 
-# origins = [
-#     'http://localhost:5173',
-#     'https://x-ray-iq.vercel.app',
-# ]
 class_names = ['avulsion', 'comminuted', 'greenstick', 'hairline', 'impacted', 'longitudinal', 'oblique', 'pathological', 'spiral']
 
 app.add_middleware(
@@ -24,7 +20,7 @@ app.add_middleware(
 
 @app.get('/')
 async def testGet():
-   return {'res': "is worked !"}
+   return "KURWA DZIAŁA ( Żukowski i tak powie, że można było krócej )"
 
 @app.post('/prompt')
 async def PromptToModel(file: bytes = File(...)):
