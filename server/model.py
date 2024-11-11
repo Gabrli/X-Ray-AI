@@ -66,6 +66,6 @@ model.add(layers.Dense(128,  activation='relu', kernel_regularizer=regularizers.
 model.add(layers.Dense(num_classes, activation="softmax"))
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
  
-model.fit(train_images, train_labels, epochs=600, validation_data=(test_images, test_labels) )
+model.fit(train_images, train_labels, epochs=3000, validation_data=(test_images, test_labels) )
 
 model.save('server/my_model.h5') 
