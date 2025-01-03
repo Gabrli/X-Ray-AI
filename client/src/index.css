@@ -22,17 +22,36 @@ body{
 
   margin: 0;
 }
+.cta-light{
+  background: linear-gradient(to left, #1F5D7A, #153160);
+}
+.cta-dark{
+  background: linear-gradient(to left, #1b3f7c, #08132F);
+}
 .btn_started{
   background: linear-gradient(to left, #1F5D7A, #153160);
 }
-.btn_started:hover{
+.cta-light:hover{
   box-shadow: #1F5D7A 0px 8px 24px;;
+}
+.cta-dark:hover{
+  box-shadow: #1b3f7c 0px 8px 24px;
 }
 .heading{
   animation:  fade linear forwards;
   animation-timeline: view();
   animation-range: contain;
   
+}
+.widget-light{
+  border-color: #1F5D7A;
+  color: #1F5D7A;
+  box-shadow: 0 40px 80px -10px #1F5D7A;
+}
+.widget-dark{
+  border-color: #1b3f7c;
+  color: #1b3f7c;
+  box-shadow: 0 40px 80px -10px #1b3f7c;
 }
 
 @keyframes fade{

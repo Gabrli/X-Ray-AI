@@ -1,9 +1,11 @@
-import ButtonStarted from "./buttonStarted";
 import HeroTitle from "./heroTitle";
 import Animation from "../../assets/animations/animation.json";
 import Lottie from "react-lottie";
 import { useContext } from "react";
 import { isMobileContext } from "../../contexts/isMobileContext";
+import Widget from "../widget/widget";
+import { FaTools, FaNetworkWired, FaFire, FaCodepen } from "react-icons/fa";
+import CtaButton from "../cta/ctaButton";
 export default function Hero() {
   const defaultOptions = {
     loop: true,
@@ -13,16 +15,24 @@ export default function Hero() {
   };
   const isMobile = useContext(isMobileContext);
   return (
-    <section className="w-custom-w-hero h-custom-h-hero bg-gray-400 backdrop-blur-md bg-opacity-10 rounded-full border border-gray-100 flex justify-center items-center flex-col mobile1:w-custom-mobile-w-hero mobile1:h-custom-mobile-h-hero mobile2:w-custom-mobile2-w-hero mobile2:h-custom-mobile2-h-hero">
-      <div className="pb-10 mobile1:pb-0 mobile2:pt-8">
+    <section className="w-1/2 h-full flex justify-center items-center flex-col mobile1:w-full  mobile2:w-full  ">
+        <section className="flex justify-center items-center gap-[10px] pb-6 mobile1:flex-col mobile1:w-full mobile1:items-start mobile1:pl-4">
+          <Widget content="AI Medicine revolution" variant="light" icon={<FaTools/>} styles="mr-[0] ml-[0]"/>
+          <Widget content="Special CNN" variant="dark" icon={<FaNetworkWired/>} styles="mr-[0] ml-[0]"/>
+        </section>
+      <HeroTitle />
+      <div className="flex justify-center items-center gap-[10px] pt-10 mobile1:flex-col mobile1:w-full">
+        <CtaButton content="Get started" href="#fileloader" icon={<FaFire/>} variant="light"/>
+        <CtaButton content="About the project..." href="#about" icon={<FaCodepen/>} styles="w-[260px] bg-secondary " variant="dark"/>
+      </div>
+      
+      <div className="pb-10 pt-10  mobile1:pb-0 mobile2:pt-8">
         <Lottie
           options={defaultOptions}
-          height={isMobile ? 130 : 230}
-          width={isMobile ? 130 : 230}
+          height={isMobile ? 400 : 800}
+          width={isMobile ? 400 : 800}
         />
       </div>
-      <HeroTitle />
-      <ButtonStarted />
     </section>
   );
 }

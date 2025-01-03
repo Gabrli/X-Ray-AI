@@ -1,5 +1,5 @@
 const useIsMobile = (windowWidth: number) => {
-  if(windowWidth <= 365) return true
+  if(windowWidth <= 700) return true
   return false
 };
 export { useIsMobile };

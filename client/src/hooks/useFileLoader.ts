@@ -14,13 +14,13 @@ export const useFileLoader = (props: IFileLoader) => {
     } else setIsReady(false);
   };
 
-  useEffect(() => {setSendQuery(false)}, [isActive])
+  useEffect(() => setSendQuery(false), [isActive])
 
   const analysisData = () => {
     const formData = new FormData();
     
     formData.append("file", file as never, file.name);
-    ANALYSIS_POST_QUERY(formData).then((res) => {
+    ANALYSIS_POST_QUERY(formData).then(res => {
       setResult({ text: res.data.res, img: formData.get("file") });
       setIsReady(false);
       setFile({ name: "" });
@@ -32,6 +32,5 @@ export const useFileLoader = (props: IFileLoader) => {
     isReady,
     handleChange,
     sendQuery
-    
   };
 };

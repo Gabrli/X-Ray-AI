@@ -6,16 +6,10 @@ export default {
       height: {
         "custom-h-top-header": "50px",
         "custom-h-logo": "50px",
-        "custom-h-hero": "750px",
-        "custom-mobile-h-hero": "400px",
-        "custom-mobile2-h-hero": "300px",
         "custom-h-fileloader": "400px",
       },
       width: {
         "custom-w-logo": "60px",
-        "custom-w-hero": "750px",
-        "custom-mobile-w-hero": "400px",
-        "custom-mobile2-w-hero": "300px",
         "custom-fileloader-w": "600px",
       },
       screens: {

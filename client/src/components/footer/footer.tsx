@@ -12,7 +12,7 @@ export default function Footer() {
     >
       <div className="flex flex-col h-full bg-secondary rounded-[16px] w-[56%] items-center mobile1:w-[90%]">
         <section className="flex justify-evenly h-[100%] pt-10  w-full mobile1:flex-col mobile2:pb-10">
-          <div className="w-1/3 flex flex-col gap-[14px]   pr-2 mobile1:w-full">
+          <div className="w-[40%] flex flex-col gap-[14px]   pr-3 pl-3 mobile1:w-full">
             <Logo />
             <p className="text-gray-400 text-center ">AI Image classificer </p>
             <CtaButton

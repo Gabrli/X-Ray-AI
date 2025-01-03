@@ -8,17 +8,12 @@ export default function Nav() {
       <NavLink
         href="#faq"
         content="FAQ "
-        styles="pl-6 pr-6 pt-1 pb-1 hover:bg-white/20"
+        styles="pl-6 pr-6 pt-1 pb-1 rounded-full hover:bg-white/20"
       />
       <NavLink
         href="https://github.com/Gabrli/X-Ray-IQ"
         content="Repo"
-        styles="pl-6 pr-6 pt-1 pb-1 hover:bg-white/20"
-      />
-      <NavLink
-        href="#about"
-        content="About"
-        styles="bg-primary h-[40px] w-[100px] rounded-[8px] flex justify-center items-center"
+        styles="pl-6 pr-6 pt-1 pb-1 rounded-full hover:bg-white/20"
       />
     </nav>
   );
