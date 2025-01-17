@@ -5,7 +5,7 @@ export default function Faq() {
   return (
     <section
       id="faq"
-      className="w-full min-h-[40vh]   flex justify-center items-center  mobile1:h-[66vh] mobile2:min-h-[50vh]"
+      className="w-full min-h-[40vh] flex justify-center items-center mobile1:h-[38vh] mobile2:min-h-[38vh] mb-10 mobile1:items-start"
     >
       <div className="w-[50%] min-h-[40%] flex justify-center items-center border border-secondary rounded-[16px] mobile1:flex-col mobile1:w-[90%] mobile2:w-[96%] mobile2:min-h-[50%] mobile2:justify-start">
         <section className="w-[30%]   flex justify-center items-center border-r border-secondary mobile1:w-full mobile1:border-r-0 mobile1:border-b mobile2:min-h-[8%] mobile2:max-h-[10%]">

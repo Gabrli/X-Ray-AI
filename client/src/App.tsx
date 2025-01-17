@@ -2,14 +2,14 @@ import Hero from "./components/hero/hero";
 import TopHeader from "./components/topHeader/topHeader";
 import "./index.css";
 import { isMobileContext } from "./contexts/isMobileContext";
-import FileLoader from "./components/fileLoader/fileLoader";
-import SectionHeading from "./components/heading/sectionHeading";
+import FileLoader from "./components/analysis/fileLoader";
+import SectionHeading from "./components/atomics/sectionHeading";
 import Faq from "./components/faq/faq";
-import Footer from "./components/footer/footer";
-import About from "./components/about/about";
-import Analysis from "./components/analysic/analysis";
+import Footer from "./components/organisms/footer";
+import About from "./components/organisms/about";
+import Analysis from "./components/analysis/analysis";
 import { useApp } from "./hooks/useApp";
-import Widget from "./components/widget/widget";
+import Widget from "./components/atomics/widget";
 import { FaPhotoVideo, FaCodepen, FaQuestion } from "react-icons/fa";
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
         <Widget content="Something to know" variant="dark" icon={<FaCodepen/>}/>
         <About />
         <Widget content="Popular questions..." variant="light" icon={<FaQuestion/>}/>
-        <SectionHeading text="Needed answers..." />
+        <SectionHeading styles="pb-10" text="Needed answers..." />
         <Faq />
         <SectionHeading text="Get in touch" />
         <Footer />

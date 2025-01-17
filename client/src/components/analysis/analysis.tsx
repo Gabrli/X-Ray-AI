@@ -1,6 +1,6 @@
 import { TypeAnimation } from "react-type-animation";
 import { IAnalysis } from "../../types/IAnalysis";
-import { useAnalysis } from "../../hooks/useAnalysis";
+import { useAnalysis } from "../../hooks/useAnalysis"
 
 export default function Analysis(props: IAnalysis) {
   const { result, isActive } = props;

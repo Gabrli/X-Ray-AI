@@ -1,7 +1,7 @@
 import { FileUploader } from "react-drag-drop-files";
-import ButtonAnalysic from "./buttonAnalysis";
 import { IFileLoader } from "../../types/IFileLoader";
 import { useFileLoader } from "../../hooks/useFileLoader";
+import Btn from "../atomics/btn"
 
 const fileTypes = ["JPG", "PNG", "JPEG"];
 export default function FileLoader(props: IFileLoader) {
@@ -26,7 +26,12 @@ export default function FileLoader(props: IFileLoader) {
           
           />
         </div>
-        <ButtonAnalysic fun={analysisData} isReady={isReady} />
+       
+        <Btn fun={analysisData} styles={` ${
+        isReady
+          ? "bg-primary text-white hover:bg-secondary"
+          : "bg-gray-700 text-gray-500 cursor-not-allowed"
+      } transition duration-500 ease-in-out pl-28 pr-28 pt-3 pb-3 font-medium rounded-lg`}  content="Start Analysis" astyles="flex justify-center items-center gap-[10px]"/>
         {sendQuery ? <p className="m-0 pt-10 text-center text-sm w-[90%]">If you waiting longer than a few seconds it's does mean that server have to start and you have to wait <strong>20-50</strong> seconds</p> : ""}
       </div>
     </div>

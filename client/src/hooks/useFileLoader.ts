@@ -18,7 +18,6 @@ export const useFileLoader = (props: IFileLoader) => {
 
   const analysisData = () => {
     const formData = new FormData();
-    
     formData.append("file", file as never, file.name);
     ANALYSIS_POST_QUERY(formData).then(res => {
       setResult({ text: res.data.res, img: formData.get("file") });

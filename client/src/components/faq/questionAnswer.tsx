@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IQuestionAnswer } from "../../types/IQuestionAnswer";
-import ButtonDropdown from "./buttonDropdown";
+import { IoIosArrowUp } from "react-icons/io";
+import Btn from "../atomics/btn";
 
 export default function QuestionAnswer(props: IQuestionAnswer) {
   const { id, question, answer } = props;
@@ -23,7 +24,8 @@ export default function QuestionAnswer(props: IQuestionAnswer) {
           >
             {question}
           </p>
-          <ButtonDropdown isActive={isActive} setIsActive={setIsActive} />
+          
+          <Btn isActive={isActive} setIsActive={setIsActive} icon={<IoIosArrowUp/>} styles="transition duration-300 ease-in-out" />
         </div>
         <section
           className={`w-full transition duration-300 ease-in-out pt-2 flex justify-start pl-11 border-t border-secondary mt-2  ${
