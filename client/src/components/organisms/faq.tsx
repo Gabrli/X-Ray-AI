@@ -1,4 +1,4 @@
-import QuestionAnswer from "./questionAnswer";
+import QuestionAnswer from "../molecules/questionAnswer";
 import { questionsAnswers } from "../../constants/questionsAnswer";
 
 export default function Faq() {

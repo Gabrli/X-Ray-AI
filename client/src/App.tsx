@@ -1,13 +1,13 @@
-import Hero from "./components/hero/hero";
-import TopHeader from "./components/topHeader/topHeader";
+import Hero from "./components/organisms/hero";
+import TopHeader from "./components/organisms/topHeader";
 import "./index.css";
 import { isMobileContext } from "./contexts/isMobileContext";
-import FileLoader from "./components/analysis/fileLoader";
+import FileLoader from "./components/atomics/fileLoader";
 import SectionHeading from "./components/atomics/sectionHeading";
-import Faq from "./components/faq/faq";
+import Faq from "./components/organisms/faq";
 import Footer from "./components/organisms/footer";
 import About from "./components/organisms/about";
-import Analysis from "./components/analysis/analysis";
+import Analysis from "./components/organisms/analysis";
 import { useApp } from "./hooks/useApp";
 import Widget from "./components/atomics/widget";
 import { FaPhotoVideo, FaCodepen, FaQuestion } from "react-icons/fa";

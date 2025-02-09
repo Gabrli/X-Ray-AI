@@ -1,7 +1,7 @@
 import { FileUploader } from "react-drag-drop-files";
 import { IFileLoader } from "../../types/IFileLoader";
 import { useFileLoader } from "../../hooks/useFileLoader";
-import Btn from "../atomics/btn"
+import Btn from "./btn"
 
 const fileTypes = ["JPG", "PNG", "JPEG"];
 export default function FileLoader(props: IFileLoader) {

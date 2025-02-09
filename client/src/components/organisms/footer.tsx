@@ -1,5 +1,5 @@
 import Btn from "../atomics/btn";
-import Logo from "../topHeader/logo";
+import Logo from "../atomics/logo";
 import { FaInstagram, FaGithub, FaLinkedin, FaBug } from "react-icons/fa";
 import { SiCodementor } from "react-icons/si";
 

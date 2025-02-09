@@ -1,5 +1,5 @@
-import Logo from "./logo";
-import Nav from "./nav";
+import Logo from "../atomics/logo";
+import Nav from "../molecules/nav";
 import { useScroll } from "../../hooks/useScroll";
 
 export default function TopHeader() {

@@ -1,4 +1,4 @@
-import HeroTitle from "./heroTitle";
+import HeroTitle from "../atomics/heroTitle";
 import Animation from "../../assets/animations/animation.json";
 import Lottie from "react-lottie";
 import { useContext } from "react";
